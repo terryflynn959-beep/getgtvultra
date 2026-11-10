@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://YOUR-DOMAIN.example/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/about/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/firestick-setup/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/android-tv-setup/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/buffering-help/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/no-signal-help/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/login-help/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.example/app-installation/</loc></url>
+</urlset>

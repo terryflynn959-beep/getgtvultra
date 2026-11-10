@@ -1,0 +1,40 @@
+GTV ULTRA IPHONE ADMIN APP — SETUP
+
+WHAT THIS APP DOES
+- Private staff sign-in using Supabase Auth.
+- View customer support tickets.
+- Search tickets and filter by status.
+- Reply to tickets and change their status.
+- View customer feedback and 1–5 star ratings.
+- Install on iPhone Home Screen as a web app.
+
+BEFORE IT CAN SHOW REAL RECORDS
+1. Deploy the FULL SOURCE project, not only the static public folder. Netlify Functions are required.
+2. In Supabase SQL Editor, run the project's updated supabase-schema.sql. This creates the support ticket and feedback tables.
+3. In Supabase Authentication, create the staff/admin user who will sign in.
+4. In Netlify Site configuration > Environment variables, set:
+   SUPABASE_URL = your Supabase project URL
+   SUPABASE_SERVICE_ROLE_KEY = your Supabase service_role key (server-side only)
+   ADMIN_USER_ID = the UUID of the authorised admin user from Supabase Auth
+5. Edit public/admin-app/config.js and replace:
+   YOUR_SUPABASE_PROJECT_URL
+   YOUR_SUPABASE_ANON_PUBLIC_KEY
+   with the Supabase Project URL and anon/public key.
+   NEVER put the service_role key in config.js or any browser file.
+6. Redeploy the site.
+7. Open https://YOUR-DOMAIN/admin-app/ on your iPhone and sign in.
+
+INSTALL ON IPHONE
+1. Open the admin-app URL in Safari.
+2. Tap the Share icon.
+3. Choose Add to Home Screen.
+4. Name it GTV Admin and tap Add.
+5. Open the new GTV Admin icon from your Home Screen.
+
+SECURITY
+- Only the Supabase user whose UUID matches ADMIN_USER_ID can access admin API data.
+- Keep your admin password private and use a strong unique password.
+- Do not share the service_role key.
+- This is an installable web app (PWA), not an App Store native app.
+- Push notifications are not included in this first version; open the app and tap Refresh to check for new records.
+- Ticket replies/status updates are saved to the database. Emailing the customer is not configured by this app.

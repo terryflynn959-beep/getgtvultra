@@ -1,0 +1,13 @@
+[build]
+  publish = "public"
+  functions = "netlify/functions"
+
+[build.environment]
+  # SUPABASE_URL is public by design and ADMIN_USER_ID is a non-secret identifier.
+  # SUPABASE_SERVICE_ROLE_KEY intentionally stays scanned: it must never appear in published files.
+  SECRETS_SCAN_OMIT_KEYS = "SUPABASE_URL,ADMIN_USER_ID"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
